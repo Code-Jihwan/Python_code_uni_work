@@ -4,7 +4,7 @@ from tkinter import *
 from pyrsistent import b
 from sympy import root
 
-root = Tk()
+root = Tk()ㅎ
 root.title("근로내용")  # 타이틀 적기
 root.geometry("700x400+600+300")  # 창 크기 설정(가로*세로 + x좌표 +y좌표)
 
@@ -56,7 +56,6 @@ btn3 = Button(root, width=5, height=2, fg="red", text="종료", command=workbtn3
 btn3.pack()
 
 root.mainloop()   #화면 유지 시키도록
-
 
 
 

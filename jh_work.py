@@ -22,8 +22,12 @@ txt.pack()
 
 #누르는 버튼의 기능
 def workbtn():
-  with open ('work.txt', "r") as f:
-    r = list(f.readlines())
+  try:
+    with open ('work.txt', "r") as f:
+      r = list(f.readlines())
+  except UnicodeDecodeError:
+    with open ('work.txt', "r", encoding="utf-8") as f:
+      r = list(f.readlines())
   pickRandomLine = random.choice(r).splitlines() [0] #랜덤하게 원소 하나 뽑음
   pickRandomLine2 = random.choice(r).splitlines() [0] #랜덤하게 원소 하나 뽑음
 
@@ -60,7 +64,7 @@ root.mainloop()   #화면 유지 시키도록
 
 
   # with ... as 구문을 사용하게 되면 파일을 열고 해당 구문이 끝나면 자동으로 닫힘
-  # with open(파일 경로, 모드) as 파일 객체: 
+  # with open(파일 경로, 모드) as 파일 객체:
   # close함수가 없지만 with as 구문을 빠져나가게 되면 자동으로 close() 함수를 호출하여 파일을 닫음 (자동으로 close 객체 생성)
   # with as 를 쓰면 파일을 열고 자동으로 닫아준다
 
